@@ -8,14 +8,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    credentialsId: 'github-creds',
-                    url: 'https://github.com/OnsKoukiPro/TPDevOps.git'
-            }
-        }
-
 
         stage('Build with Maven') {
             steps {
