@@ -10,9 +10,12 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/tonuser/ton-repo.git'
+                git branch: 'main',
+                    credentialsId: 'github-creds',
+                    url: 'https://github.com/OnsKoukiPro/TPDevOps.git'
             }
         }
+
 
         stage('Build with Maven') {
             steps {
